@@ -1,21 +1,36 @@
-function Frame1() {
-    return (
-        <div className="absolute bottom-[40px] content-stretch flex font-['Inter:Regular','Noto_Sans_KR:Regular',sans-serif] font-normal gap-[100px] h-[24px] items-center leading-[normal] right-[108px] text-[20px] whitespace-nowrap">
-            <p className="relative shrink-0">¼­ºñ½º ¼Ò°³</p>
-            <p className="relative shrink-0">À¯ÃâÁ¤º¸ Á¶È¸ÇÏ±â</p>
-            <p className="relative shrink-0">¾Ë¸² ¹Ş±â</p>
-            <p className="relative shrink-0">°øÁö»çÇ×</p>
-        </div>
-    );
-}
+import { NavLink } from 'react-router-dom';
+import './Header.css';
+
+const NAV_ITEMS = [
+  { label: 'ì„œë¹„ìŠ¤ ì†Œê°œ', to: '/service' },
+  { label: 'ìœ ì¶œì •ë³´ ì¡°íšŒí•˜ê¸°', to: '/' },
+  { label: 'ì•Œë¦¼ ë°›ê¸°', to: '/alert' },
+  { label: 'ê³µì§€ì‚¬í•­', to: '/notice' },
+  { label: 'ë§ˆì´í˜ì´ì§€', to: '/mypage' },
+];
 
 export default function Header() {
-    return (
-        <div className="bg-black border border-black border-solid not-italic relative size-full text-white h-[130px]">
-            <a className="absolute block bottom-[-16px] font-['Allerta_Stencil:Regular',sans-serif] leading-[0] left-[73px] text-[64px] text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)] top-[32px] w-[272px]" href="/">
-                <p className="cursor-pointer decoration-solid leading-[normal] underline">Sentinel</p>
-            </a>
-            <Frame1 />
-        </div>
-    );
+  return (
+    <header className="header">
+      <NavLink to="/" className="header__logo">
+        Sentinel
+      </NavLink>
+      <nav className="header__nav">
+        {NAV_ITEMS.map(({ label, to }) => (
+          <NavLink
+            key={to + label}
+            to={to}
+            end={to === '/'}
+            className={({ isActive }) =>
+              isActive
+                ? 'header__nav-link header__nav-link--active'
+                : 'header__nav-link'
+            }
+          >
+            {label}
+          </NavLink>
+        ))}
+      </nav>
+    </header>
+  );
 }
