@@ -6,7 +6,6 @@ import ServiceIntroPage from './pages/ServiceIntroPage';
 import AlertPage from './pages/AlertPage';
 import NoticePage from './pages/NoticePage';
 import MyPage from './pages/MyPage';
-import SearchPage from './pages/SearchPage';
 import './App.css';
 
 export default function App() {
@@ -26,7 +25,7 @@ export default function App() {
           <Route path="/alert" element={<AlertPage />} />
           <Route path="/notice" element={<NoticePage />} />
           <Route path="/mypage" element={<MyPage />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/search" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

@@ -33,6 +33,10 @@
   font-family: 'Alkalami', 'Noto Sans KR', sans-serif;
 }
 
+.sentinel-font-logo {
+  font-family: 'Black Ops One', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
