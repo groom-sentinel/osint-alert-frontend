@@ -81,7 +81,7 @@ export default function Hero() {
       const res = await fetch('http://localhost:8000/api/check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ category }),
+        body: JSON.stringify({ category, query }),
       });
 
       if (!res.ok) {
