@@ -15,7 +15,7 @@ export default function App() {
         className="min-h-screen relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(180deg, #1d4ed8 0%, #3b82f6 30%, #93c5fd 65%, #eff6ff 100%)',
+            'linear-gradient(180deg, #1d4ed8 0%, #3b82f6 30%, #5DA9FF 65%, #80B7FF 100%)',
         }}
       >
         <Header />
