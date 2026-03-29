@@ -324,7 +324,7 @@ export default function DashboardPage() {
               <div className={tablePanelClass}>
                 <table className="w-full text-sm text-left min-w-[640px]">
                   <thead>
-                    <tr className="bg-slate-500/15 text-slate-800 border-b border-slate-500/25">
+                    <tr className="border-b ">
                       <th className="py-3 px-3 font-semibold text-white">제목</th>
                       <th className="py-3 px-3 font-semibold text-white">카테고리</th>
                       <th className="py-3 px-3 font-semibold whitespace-nowrap text-white">수집 시간</th>
@@ -371,7 +371,7 @@ export default function DashboardPage() {
               <div className={tablePanelClass}>
                 <table className="w-full text-sm text-left min-w-[520px]">
                   <thead>
-                    <tr className="bg-slate-500/15 text-slate-800 border-b border-slate-500/25">
+                    <tr className="border-b">
                       <th className="py-3 px-3 font-semibold text-white">채널</th>
                       <th className="py-3 px-3 font-semibold text-white">결과</th>
                       <th className="py-3 px-3 font-semibold whitespace-nowrap text-white">발송 시간</th>
