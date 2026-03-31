@@ -25,21 +25,21 @@ export default function AlertPage() {
 
   return (
     <main
-      className="relative z-10 flex flex-col items-center min-h-[calc(100vh-112px)] px-6 py-14"
+      className="relative z-10 flex flex-col items-center min-h-[calc(100vh-112px)] px-4 sm:px-6 py-8 sm:py-14"
       style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
     >
       {/* 헤더 */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-8 sm:mb-14">
         <h2
-          className="text-white text-[52px] font-bold mb-4 drop-shadow-md"
+          className="text-white text-[36px] sm:text-[52px] font-bold mb-3 sm:mb-4 drop-shadow-md"
           style={{ fontFamily: "'Goldman', sans-serif" }}
         >
           알림 받기
         </h2>
-        <p className="text-white/70 text-lg max-w-xl leading-relaxed">
+        <p className="text-white/70 text-sm sm:text-lg max-w-xl leading-relaxed px-2">
           새로운 유출 게시글이 등록되면 Slack으로 즉시 알림을 받아보세요.
-          <br />
-          아래 두 단계를 완료하면 실시간 알림이 시작됩니다.
+          <br className="hidden sm:block" />
+          {' '}아래 두 단계를 완료하면 실시간 알림이 시작됩니다.
         </p>
       </div>
 
@@ -48,29 +48,29 @@ export default function AlertPage() {
         {/* Step 1 */}
         <div
           className={`
-            backdrop-blur-sm border rounded-2xl px-8 py-7 transition-all duration-200
+            backdrop-blur-sm border rounded-2xl px-4 py-5 sm:px-8 sm:py-7 transition-all duration-200
             ${workspaceJoined
               ? 'bg-white/5 border-white/40 opacity-60'
-              : 'bg-blue-400/15 border-white/30'}
+              : 'bg-blue-400/15 border-white/60'}
           `}
         >
-          <div className="flex items-start gap-5">
+          <div className="flex items-start gap-4">
             <StepBadge number={1} done={workspaceJoined} />
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">
                 Step 1
               </p>
-              <h3 className="text-white text-lg font-bold mb-1">
+              <h3 className="text-white text-base sm:text-lg font-bold mb-1">
                 워크스페이스 참여
               </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-5">
+              <p className="text-white/60 text-sm leading-relaxed mb-4 sm:mb-5">
                 Sentinel Slack 워크스페이스에 가입합니다.
               </p>
               <button
                 onClick={handleWorkspaceJoin}
                 disabled={workspaceJoined}
                 className={`
-                  inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150
+                  w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150
                   ${workspaceJoined
                     ? 'bg-white/10 text-white/40 cursor-default border border-white/10'
                     : 'bg-blue-500 hover:bg-blue-400 text-white border border-blue-400 cursor-pointer'}
@@ -85,28 +85,28 @@ export default function AlertPage() {
 
         {/* 연결 점선 */}
         <div className="flex justify-center">
-          <div className="w-px h-6 border-l-2 border-dashed border-white/20" />
+          <div className="w-px h-5 border-l-2 border-dashed border-white/20" />
         </div>
 
         {/* Step 2 */}
         <div
           className={`
-            backdrop-blur-sm border rounded-2xl px-8 py-7 transition-all duration-200
+            backdrop-blur-sm border rounded-2xl px-4 py-5 sm:px-8 sm:py-7 transition-all duration-200
             ${workspaceJoined
-              ? 'bg-blue-400/15 border-white/30'
-              : 'bg-white/5 border-white/30 opacity-50'}
+              ? 'bg-blue-400/15 border-white/60'
+              : 'bg-white/5 border-white/60 opacity-50'}
           `}
         >
-          <div className="flex items-start gap-5">
+          <div className="flex items-start gap-4">
             <StepBadge number={2} done={false} active={workspaceJoined} />
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">
                 Step 2
               </p>
-              <h3 className="text-white text-lg font-bold mb-1">
+              <h3 className="text-white text-base sm:text-lg font-bold mb-1">
                 알림 채널 참여
               </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-5">
+              <p className="text-white/60 text-sm leading-relaxed mb-4 sm:mb-5">
                 <span className="text-white/80 font-semibold">#security-alerts</span> 채널에 참여하면
                 유출 게시글 등록 시 즉시 알림을 받습니다.
               </p>
@@ -114,7 +114,7 @@ export default function AlertPage() {
                 onClick={handleChannelJoin}
                 disabled={!workspaceJoined}
                 className={`
-                  inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150
+                  w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150
                   ${workspaceJoined
                     ? 'bg-blue-500 hover:bg-blue-400 text-white border border-blue-400 cursor-pointer'
                     : 'bg-white/10 text-white/30 cursor-not-allowed border border-white/10'}
@@ -128,7 +128,7 @@ export default function AlertPage() {
         </div>
 
         {/* 완료 안내 */}
-        <p className="text-center text-white/40 text-xs mt-2">
+        <p className="text-center text-white/40 text-xs mt-2 px-2">
           이미 워크스페이스에 참여했다면 Step 2만 진행하세요.
         </p>
       </div>

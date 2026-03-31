@@ -3,51 +3,51 @@ export default function NoticePage() {
     {
       id: 1,
       date: '2026.03.20',
-      title: '\uC11C\uBE44\uC2A4 \uC624\uD508 \uC548\uB0B4',
-      desc: 'Sentinel \uC11C\uBE44\uC2A4\uAC00 \uC815\uC2DD \uC624\uD508\uB418\uC5C8\uC2B5\uB2C8\uB2E4.',
+      title: '서비스 오픈 안내',
+      desc: 'Sentinel 서비스가 정식 오픈되었습니다.',
     },
     {
       id: 2,
       date: '2026.03.15',
-      title: '\uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uC5C5\uB370\uC774\uD2B8 \uC548\uB0B4',
-      desc: '\uCD5C\uC2E0 \uC720\uCD9C \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uAC00 \uBC18\uC601\uB418\uC5C8\uC2B5\uB2C8\uB2E4.',
+      title: '데이터베이스 업데이트 안내',
+      desc: '최신 유출 데이터베이스가 반영되었습니다.',
     },
     {
       id: 3,
       date: '2026.03.10',
-      title: '\uAC1C\uC778\uC815\uBCF4 \uCC98\uB9AC\uBC29\uCE68 \uC548\uB0B4',
-      desc: '\uAC1C\uC778\uC815\uBCF4 \uCC98\uB9AC\uBC29\uCE68\uC774 \uAC31\uC2E0\uB418\uC5C8\uC2B5\uB2C8\uB2E4.',
+      title: '개인정보 처리방침 안내',
+      desc: '개인정보 처리방침이 갱신되었습니다.',
     },
   ];
 
   return (
-    <main className="relative z-10 flex flex-col items-center min-h-[calc(100vh-112px)] px-6 pt-16">
+    <main className="relative z-10 flex flex-col items-center min-h-[calc(100vh-112px)] px-4 sm:px-6 pt-8 sm:pt-16 pb-12">
       <h2
-        className="text-white text-[52px] font-bold mb-10 drop-shadow-md"
+        className="text-white text-[32px] sm:text-[52px] font-bold mb-6 sm:mb-10 drop-shadow-md"
         style={{ fontFamily: "'Goldman', sans-serif" }}
       >
-        {'\uACF5\uC9C0\uC0AC\uD56D'}
+        공지사항
       </h2>
-      <ul className="w-full max-w-2xl flex flex-col gap-4">
+      <ul className="w-full max-w-2xl flex flex-col gap-3 sm:gap-4">
         {NOTICES.map((notice) => (
           <li
             key={notice.id}
-            className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl px-7 py-5 text-left hover:bg-white/25 transition-colors cursor-pointer"
+            className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl px-4 sm:px-7 py-4 sm:py-5 text-left hover:bg-white/25 transition-colors cursor-pointer"
           >
             <span
-              className="text-white/55 text-sm mb-1 block"
+              className="text-white/55 text-xs sm:text-sm mb-1 block"
               style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
             >
               {notice.date}
             </span>
             <p
-              className="text-white text-lg font-semibold mb-1"
+              className="text-white text-base sm:text-lg font-semibold mb-1"
               style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
             >
               {notice.title}
             </p>
             <p
-              className="text-white/70 text-sm"
+              className="text-white/70 text-xs sm:text-sm"
               style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
             >
               {notice.desc}

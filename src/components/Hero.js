@@ -123,7 +123,6 @@ export default function Hero() {
             value={category}
             onChange={handleCategoryChange}
             className="hero__search-input"
-            style={{ maxWidth: '150px' }}
           >
             {categories.map((item) => (
               <option key={item} value={item}>
@@ -151,7 +150,7 @@ export default function Hero() {
       </div>
 
       {loading && (
-        <div className="mt-6 w-full max-w-2xl text-left text-white/90">
+        <div className="mt-6 w-full max-w-2xl text-left text-white/90 px-1">
           조회 중입니다...
         </div>
       )}
@@ -160,12 +159,12 @@ export default function Hero() {
         <div className="mt-6 w-full max-w-2xl text-left">
           {result.is_leaked ? (
             <div>
-              <div className="bg-red-500/30 backdrop-blur-sm border border-red-400/40 rounded-2xl px-7 py-5 mb-4">
-                <p className="text-red-300 text-xl font-bold mb-1">⚠ 유출이 감지되었습니다</p>
-                <p className="text-white/90">
+              <div className="bg-red-500/30 backdrop-blur-sm border border-red-400/40 rounded-2xl px-4 sm:px-7 py-4 sm:py-5 mb-4">
+                <p className="text-red-300 text-base sm:text-xl font-bold mb-1">⚠ 유출이 감지되었습니다</p>
+                <p className="text-white/90 text-sm sm:text-base">
                   선택된 분류 ({category})가 유출 데이터에서 발견되었습니다.
                 </p>
-                <p className="text-white/90">
+                <p className="text-white/90 text-sm sm:text-base">
                   {result.leak_count ?? 0}건의 유출 데이터에 포함되어 있습니다.
                 </p>
               </div>
@@ -175,14 +174,14 @@ export default function Hero() {
                   {result.records.map((record) => (
                     <li
                       key={record.id || `${record.source_name}-${record.category}`}
-                      className="bg-blue-300/20 backdrop-blur-sm border border-blue-400/30 rounded-xl px-6 py-4"
+                      className="bg-blue-300/20 backdrop-blur-sm border border-blue-400/30 rounded-xl px-4 sm:px-6 py-4"
                     >
-                      <p className="text-white font-semibold">{record.title || 'unnamed'}</p>
-                      <p className="text-white text-sm mt-1">
+                      <p className="text-white font-semibold text-sm sm:text-base">{record.title || 'unnamed'}</p>
+                      <p className="text-white text-xs sm:text-sm mt-1">
                         출처: {record.source_name} · 유형: {record.category}
                       </p>
                       {record.published_at && (
-                        <p className="text-white text-sm">
+                        <p className="text-white text-xs sm:text-sm">
                           날짜: {new Date(record.published_at).toLocaleDateString('ko-KR')}
                         </p>
                       )}
@@ -192,9 +191,9 @@ export default function Hero() {
               )}
             </div>
           ) : (
-            <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-2xl px-7 py-5">
-              <p className="text-green-600 text-xl font-bold mb-1">✓ 안전합니다</p>
-              <p className="text-white">
+            <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-2xl px-4 sm:px-7 py-4 sm:py-5">
+              <p className="text-green-600 text-base sm:text-xl font-bold mb-1">✓ 안전합니다</p>
+              <p className="text-white text-sm sm:text-base">
                 선택된 분류 ({category})는 현재 수집된 유출 데이터에서 발견되지 않았습니다.
               </p>
             </div>

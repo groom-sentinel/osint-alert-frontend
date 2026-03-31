@@ -28,9 +28,9 @@ const CHART_COLORS = [
 ];
 
 const cardClass =
-  'bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-4 text-left shadow-lg';
+  'bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl px-3 sm:px-5 py-3 sm:py-4 text-left shadow-lg';
 
-const chartWrapClass = `${cardClass} flex flex-col min-h-[320px]`;
+const chartWrapClass = `${cardClass} flex flex-col min-h-[240px] sm:min-h-[320px]`;
 
 /** 테이블 영역: 짙은 남색 대신 살짝만 어두운 회색 톤 */
 const tablePanelClass =
@@ -46,7 +46,7 @@ function StatCard({ title, value, sub }) {
         {title}
       </p>
       <p
-        className="text-white text-3xl font-bold tabular-nums"
+        className="text-white text-2xl sm:text-3xl font-bold tabular-nums"
         style={{ fontFamily: "'Goldman', sans-serif" }}
       >
         {value}
@@ -273,8 +273,8 @@ export default function DashboardPage() {
                       <YAxis
                         type="category"
                         dataKey="name"
-                        width={120}
-                        tick={{ fill: 'rgba(255,255,255,0.8)', fontSize: 11 }}
+                        width={80}
+                        tick={{ fill: 'rgba(255,255,255,0.8)', fontSize: 10 }}
                       />
                       <Tooltip contentStyle={tooltipStyle} />
                       <Bar dataKey="count" name="게시물 수" fill="#60a5fa" radius={[0, 4, 4, 0]} />
