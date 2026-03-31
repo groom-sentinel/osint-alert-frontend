@@ -50,8 +50,8 @@ export default function AlertPage() {
           className={`
             backdrop-blur-sm border rounded-2xl px-8 py-7 transition-all duration-200
             ${workspaceJoined
-              ? 'bg-white/5 border-white/10 opacity-60'
-              : 'bg-blue-400/15 border-blue-400/30'}
+              ? 'bg-white/5 border-white/40 opacity-60'
+              : 'bg-blue-400/15 border-white/30'}
           `}
         >
           <div className="flex items-start gap-5">
@@ -94,7 +94,7 @@ export default function AlertPage() {
             backdrop-blur-sm border rounded-2xl px-8 py-7 transition-all duration-200
             ${workspaceJoined
               ? 'bg-blue-400/15 border-white/30'
-              : 'bg-white/5 border-white/10 opacity-50'}
+              : 'bg-white/5 border-white/30 opacity-50'}
           `}
         >
           <div className="flex items-start gap-5">
@@ -128,11 +128,9 @@ export default function AlertPage() {
         </div>
 
         {/* 완료 안내 */}
-        {workspaceJoined && (
-          <p className="text-center text-white text-xs mt-2">
-            이미 워크스페이스에 참여했다면 Step 2만 진행하세요.
-          </p>
-        )}
+        <p className="text-center text-white/40 text-xs mt-2">
+          이미 워크스페이스에 참여했다면 Step 2만 진행하세요.
+        </p>
       </div>
     </main>
   );
